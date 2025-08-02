@@ -1,67 +1,99 @@
-# CodeIgniter 4 Framework
+# Mateos
 
-## What is CodeIgniter?
+A web application built with [CodeIgniter 4](https://codeigniter.com), a lightweight and powerful PHP framework.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Features
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- MVC architecture (Controllers, Models, Views)
+- Organized folder structure for scalability
+- Composer-based dependency management
+- Secure public directory for web access
+- Built-in support for unit and feature testing
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Project Structure
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+```
+app/        # Application code (Config, Controllers, Models, Views, etc.)
+public/     # Web root (index.php, assets, etc.)
+system/     # CodeIgniter core framework
+tests/      # Unit and feature tests
+writable/   # Cache, logs, uploads
+.env        # Environment configuration
+composer.json # Composer dependencies
+phpunit.xml.dist # PHPUnit configuration
+```
 
-## Important Change with index.php
+## Getting Started
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### Prerequisites
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- PHP 7.4 or newer
+- [Composer](https://getcomposer.org/)
+- Web server (Apache, Nginx, etc.)
+- Supported database (MySQL, PostgreSQL, SQLite, etc.)
 
-**Please** read the user guide for a better explanation of how CI4 works!
+### Installation
 
-## Repository Management
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/mateos.git
+   cd mateos
+   ```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+2. **Install dependencies:**
+   ```sh
+   composer install
+   ```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+3. **Copy and configure environment:**
+   ```sh
+   cp .env.example .env
+   # Edit .env to set your database and environment settings
+   ```
 
-## Contributing
+4. **Set writable permissions:**
+   ```sh
+   chmod -R 0777 writable
+   ```
 
-We welcome contributions from the community.
+5. **Configure your web server to point to the `public/` directory.**
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+### Running the Application
 
-## Server Requirements
+- Start the local development server:
+  ```sh
+  php spark serve
+  ```
+- Visit [http://localhost:8080](http://localhost:8080) in your browser.
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## Testing
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- **Configure your test database** in `.env` or `app/Config/Database.php`.
+- **Run tests:**
+  ```sh
+  ./phpunit
+  ```
+  Or on Windows:
+  ```sh
+  vendor\bin\phpunit
+  ```
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+- **Generate code coverage:**
+  ```sh
+  ./phpunit --colors --coverage-text=tests/coverage.txt --coverage-html=tests/coverage/ -d memory_limit=1024m
+  ```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+See [tests/README.md](tests/README.md) for more details.
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-# mariakyoroghlyan.github.io
-# mariakyoroghlyan.github.io
-# mariakyoroghlyan.github.io
-# mateos
-# mateos
-# mateos
-# mateos
+## Documentation
+
+- [CodeIgniter 4 User Guide](https://codeigniter.com/user_guide/)
+- [PHPUnit Documentation](https://phpunit.de/documentation.html)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+**Note:** For security, always configure your web server to serve from the `public/` directory only.
