@@ -1,6 +1,6 @@
 # Mateos
 
-A web application built with [CodeIgniter 4](https://codeigniter.com), a lightweight and powerful PHP framework.
+A web library application built with [CodeIgniter 4](https://codeigniter.com), a lightweight and powerful PHP framework.
 
 ## Features
 
