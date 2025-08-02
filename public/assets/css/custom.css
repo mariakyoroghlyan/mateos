@@ -1,0 +1,40 @@
+.img-image-input-wrapper {
+    background-image: url(/assets/media/svg/files/blank-image.svg);
+}
+
+.active_admin_page{
+    color: white !important;
+}
+
+
+.dataTables_wrapper .dataTables_length select{
+    width: 80px !important;
+}
+
+.col-md-6{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-select.form-select-solid{
+    width: 80px;
+}
+
+.delete_line{
+    cursor: pointer;
+}
+
+.page-item.active .page-link{
+    background-color: rgba(65, 29, 11, 1);
+}
+
+.flag-img{
+    width: 30px;
+    height: 20px;
+    border: 1px solid white;
+}
+
+.message{
+    margin-top: 20px;
+}
