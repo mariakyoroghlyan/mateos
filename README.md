@@ -1,4 +1,4 @@
-# Mateos
+# Website using PHP
 
 A web library application built with [CodeIgniter 4](https://codeigniter.com), a lightweight and powerful PHP framework.
 
